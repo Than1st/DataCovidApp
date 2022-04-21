@@ -6,12 +6,24 @@
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/box_shadow_login_register.xml" value="0.1335" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/btn_blue.xml" value="0.1335" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/gradation_background.xml" value="0.1335" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.12" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.12" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/ic_launcher_background.xml" value="0.12" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/ic_person.xml" value="0.1335" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/ic_person_add.xml" value="0.12" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/toolbar_shape.xml" value="0.1" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout-v28/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_detail.xml" value="0.16" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_register.xml" value="0.13697916666666668" />
-        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/car_item.xml" value="0.2900262467191601" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/car_item.xml" value="0.33" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_edit.xml" value="0.25" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/list_item.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -20,5 +32,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

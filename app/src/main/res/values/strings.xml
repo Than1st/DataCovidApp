@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Chapter5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Hai, %s</string>
+    <string name="jaga_kesehatan_dan_patuhi_protokol_kesehatan_ya">Jaga Kesehatan dan\npatuhi protokol kesehatan ya!</string>
+    <string name="jumlah_kasus_seluruh_dunia_s">Jumlah Kasus Seluruh Dunia : %s</string>
+    <string name="edit_s">Edit, %s</string>
+    <string name="all_cases">All Cases</string>
+    <string name="country">Country</string>
 </resources>

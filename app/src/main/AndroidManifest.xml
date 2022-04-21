@@ -12,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chapter5">
         <activity
-            android:name=".DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
