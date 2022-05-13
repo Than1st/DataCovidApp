@@ -1,7 +1,6 @@
 package com.than.chapter5.fragment
 
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,14 +14,14 @@ import com.than.chapter5.R
 import com.than.chapter5.adapter.MainAdapter
 import com.than.chapter5.database.CovidDatabase
 import com.than.chapter5.databinding.FragmentHomeBinding
+import com.than.chapter5.datastore.DataStoreManager
 import com.than.chapter5.model.GetAllData
 import com.than.chapter5.model.GetAllDataCovidResponse
-import com.than.chapter5.model.User
 import com.than.chapter5.service.ApiClient
 import com.than.chapter5.viewmodel.HomeViewModel
+import com.than.chapter5.viewmodel.ViewModelFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,6 +31,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private var covidDatabase: CovidDatabase? = null
     private lateinit var homeViewModel: HomeViewModel
+    private lateinit var pref: DataStoreManager
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,21 +43,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        pref = DataStoreManager(requireActivity())
+        homeViewModel = ViewModelProvider(requireActivity(), ViewModelFactory(pref))[HomeViewModel::class.java]
         covidDatabase = CovidDatabase.getInstance(requireContext())
-        val sharedPreferences = requireContext().getSharedPreferences(LoginFragment.SHARED_FILE, Context.MODE_PRIVATE)
-        val username = sharedPreferences.getString("username", "default_username")
-        val password = sharedPreferences.getString("password", "default_password")
-        homeViewModel.dataUser.observe(viewLifecycleOwner) {
+        homeViewModel.getDataUser().observe(viewLifecycleOwner){
             binding.tvWelcome.text = getString(R.string.welcome, it.nama)
         }
-        if (username != null) {
-            if (password != null) {
-                getDataUser(username, password)
-            }
-        }
+
         binding.toolbar.setOnClickListener {
-            homeViewModel.dataUser.observe(viewLifecycleOwner){
+            homeViewModel.getDataUser().observe(viewLifecycleOwner){
                 AlertDialog.Builder(requireContext())
                     .setTitle("User Profile")
                     .setMessage("""
@@ -74,11 +68,10 @@ class HomeFragment : Fragment() {
                             .setTitle("Konfirmasi Logout")
                             .setMessage("Anda yakin mau keluar?")
                             .setNeutralButton("Tidak"){dialog, _ -> dialog.dismiss()}
-                            .setPositiveButton("Iya"){dialog, _ ->
-                                val editor = sharedPreferences.edit()
-                                editor.clear()
-                                editor.apply()
-                                dialog.dismiss()
+                            .setPositiveButton("Iya"){ _, _ ->
+                                lifecycleScope.launch(Dispatchers.IO) {
+                                    pref.deleteUser()
+                                }
                                 findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
                             }
                             .create()
@@ -86,14 +79,7 @@ class HomeFragment : Fragment() {
                         dialog.dismiss()
                     }
                     .setNegativeButton("Edit Profile"){ _, _ ->
-                        val data = User(
-                            it.id_user,
-                            it.nama,
-                            it.email,
-                            it.username,
-                            it.password
-                        )
-                        val edit = HomeFragmentDirections.actionHomeFragmentToEditFragment(data)
+                        val edit = HomeFragmentDirections.actionHomeFragmentToEditFragment(it)
                         findNavController().navigate(edit)
                     }
                     .create().show()
@@ -104,16 +90,6 @@ class HomeFragment : Fragment() {
         fetchAllData()
     }
 
-    private fun getDataUser(username: String, password: String) {
-        lifecycleScope.launch(Dispatchers.IO){
-            val getData = covidDatabase?.userDao()?.getUser(username, password)
-            runBlocking(Dispatchers.Main){
-                if (getData != null) {
-                    homeViewModel.getDataUser(getData)
-                }
-            }
-        }
-    }
 
     private fun getCases() {
         ApiClient.instance.getAllData().enqueue(object : Callback<GetAllData> {
