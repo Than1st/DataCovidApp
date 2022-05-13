@@ -86,28 +86,6 @@ class LoginFragment : Fragment() {
                     }
                 }
             }
-//            if (statusLogin){
-//                lifecycleScope.launch(Dispatchers.IO) {
-//                    val getData = covidDatabase?.userDao()?.getUser(
-//                        binding.etUsername.text.toString(),
-//                        binding.etPassword.text.toString()
-//                    )
-//                    runBlocking(Dispatchers.Main) {
-//                        if (getData != null) {
-//                            setDataUser(getData)
-//                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-//                        } else {
-//                            Toast.makeText(requireContext(), "gagal get data dari Room!", Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//                }
-//            } else {
-//                Toast.makeText(
-//                    requireContext(),
-//                    "Username / Password salah!",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            }
         }
     }
 

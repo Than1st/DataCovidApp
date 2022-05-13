@@ -1,6 +1,5 @@
 package com.than.chapter5.fragment
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -99,7 +98,9 @@ class DetailFragment : Fragment() {
                                 val favorite = Favorite(
                                     getDataFavorite.id_favorite,
                                     getDataFavorite.id_user,
-                                    getDataFavorite.country_name
+                                    getDataFavorite.country_name,
+                                    getDataFavorite.cases,
+                                    getDataFavorite.image
                                 )
                                 val deleteFavorite = covidDatabase?.favoriteDao()?.deleteFavorite(favorite)
                                 if (deleteFavorite != 0){
@@ -113,7 +114,9 @@ class DetailFragment : Fragment() {
                             val favorite = Favorite(
                                 null,
                                 idUser,
-                                dataCovid.country
+                                dataCovid.country,
+                                dataCovid.cases,
+                                dataCovid.countryInfo.flag
                             )
                             val tambahFavorite = covidDatabase?.favoriteDao()?.addFavorite(favorite)
                             if (tambahFavorite != 0.toLong()){

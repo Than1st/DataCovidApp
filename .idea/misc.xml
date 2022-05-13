@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/bg_register.xml" value="0.149" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/box_shadow_login_register.xml" value="0.1335" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/btn_blue.xml" value="0.1335" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/drawable/gradation_background.xml" value="0.1335" />
@@ -18,9 +19,10 @@
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/activity_register.xml" value="0.13697916666666668" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/car_item.xml" value="0.33" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/favorite_list_item.xml" value="0.25" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_edit.xml" value="0.25" />
-        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_favorite.xml" value="0.18611111111111112" />
+        <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/SulthanLR/AndroidStudioProjects/Chapter5/app/src/main/res/layout/fragment_register.xml" value="0.25" />
