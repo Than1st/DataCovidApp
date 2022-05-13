@@ -49,7 +49,8 @@ class RegisterFragment : Fragment() {
                         binding.etNama.text.toString(),
                         binding.etEmail.text.toString(),
                         binding.etUsername.text.toString(),
-                        binding.etPassword.text.toString()
+                        binding.etPassword.text.toString(),
+                        "no_image"
                     )
                     lifecycleScope.launch(Dispatchers.IO){
                         val register = covidDatabase?.userDao()?.insertUser(data)

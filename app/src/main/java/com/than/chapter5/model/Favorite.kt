@@ -12,5 +12,7 @@ data class Favorite(
     @PrimaryKey(autoGenerate = true)
     var id_favorite: Int?,
     var id_user: Int,
-    var country_name: String
+    var country_name: String,
+    var cases: Int,
+    var image: String
 ): Parcelable

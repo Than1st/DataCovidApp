@@ -28,6 +28,18 @@
         app:layout_constraintEnd_toEndOf="@+id/bg_login"
         app:layout_constraintStart_toStartOf="@+id/bg_login"
         app:layout_constraintTop_toTopOf="@+id/bg_login" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/person"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+        app:layout_constraintEnd_toEndOf="@+id/iv_logo"
+        app:layout_constraintStart_toStartOf="@+id/iv_logo"
+        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_nama"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

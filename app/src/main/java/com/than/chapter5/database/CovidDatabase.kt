@@ -9,7 +9,7 @@ import com.than.chapter5.dao.UserDao
 import com.than.chapter5.model.Favorite
 import com.than.chapter5.model.User
 
-@Database(entities = [User::class, Favorite::class], version = 2)
+@Database(entities = [User::class, Favorite::class], version = 4)
 abstract class CovidDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun favoriteDao(): FavoriteDao

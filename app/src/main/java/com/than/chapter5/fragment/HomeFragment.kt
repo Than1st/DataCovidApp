@@ -1,11 +1,14 @@
 package com.than.chapter5.fragment
 
 import android.app.AlertDialog
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -48,6 +51,9 @@ class HomeFragment : Fragment() {
         covidDatabase = CovidDatabase.getInstance(requireContext())
         homeViewModel.getDataUser().observe(viewLifecycleOwner){
             binding.tvWelcome.text = getString(R.string.welcome, it.nama)
+            if(it.image != "no_image"){
+                loadImage(Uri.parse(it.image))
+            }
         }
 
         binding.toolbar.setOnClickListener {
@@ -59,7 +65,11 @@ class HomeFragment : Fragment() {
                 Email: ${it.email}
                 Username: ${it.username}
             """.trimIndent())
-                    .setNeutralButton("Cancel"){dialog, _ ->
+                    .setNeutralButton("Favorite"){dialog, _ ->
+                        val favorite = HomeFragmentDirections.actionHomeFragmentToFavoriteFragment(
+                            it.id_user!!
+                        )
+                        findNavController().navigate(favorite)
                     dialog.dismiss()
                 }
                     .setPositiveButton("Logout"){dialog, _ ->
@@ -136,5 +146,13 @@ class HomeFragment : Fragment() {
         adapter.submitData(data)
         binding.rvMain.adapter = adapter
     }
+
+    private fun loadImage(uri: Uri) {
+        Log.d("Cek URI", uri.toString())
+        binding.profileImage.setImageURI(uri)
+//        val s: String = mUri.toString()
+//        val mUri = Uri.parse(s)
+    }
+
 
 }

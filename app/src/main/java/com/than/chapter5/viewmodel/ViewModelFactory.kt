@@ -8,12 +8,12 @@ import java.lang.IllegalArgumentException
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory(private val pref: DataStoreManager) : ViewModelProvider.NewInstanceFactory(){
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        when {
+        return when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-                return HomeViewModel(pref) as T
+                HomeViewModel(pref) as T
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-                return DetailViewModel(pref) as T
+                DetailViewModel(pref) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
         }
